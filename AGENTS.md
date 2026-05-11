@@ -10,6 +10,7 @@
 ## App Wiring
 - This is an Expo Router app; entry is `expo-router/entry`, routes live in `app/`, and the root layout is `app/_layout.tsx`.
 - Web uses Metro via `app.json` and NativeWind via `metro.config.js`: `withNativeWind(config, { input: "./global.css" })`.
+- NativeWind className transformation also depends on `babel.config.js` with `plugins: ['nativewind/babel']`; without it Web falls back to unstyled vertical React Native output.
 - NativeWind requires Tailwind v3 here; do not upgrade `tailwindcss` to v4 unless NativeWind support is verified.
 - `tailwind.config.js` must keep `presets: [require('nativewind/preset')]` and include both `app/**/*` and `ui/**/*`.
 
